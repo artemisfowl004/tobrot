@@ -62,7 +62,7 @@ UPLOAD_TO_CLOUD_WHEN_RENAME = Config.UPLOAD_TO_CLOUD_WHEN_RENAME
 GP_LINKS_API_KEY = Config.GP_LINKS_API_KEY
 SPECIAL_CHARACTERS = "+™"
 GP_LINKS_COMMAND = Config.GP_LINKS_COMMAND
-
+SP_LIT_ALGO_RITH_M = Config.SP_LIT_ALGO_RITH_M
 
 if os.path.exists("TorrentLeech-Gdrive.log"):
 	with open("Torrentleech-Gdrive.log", "r+") as f_d:
