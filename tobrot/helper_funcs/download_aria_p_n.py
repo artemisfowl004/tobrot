@@ -457,7 +457,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                     pass
                 #
-                prog = pyprog.ProgressBar(" ", " ", total=100, bar_length=15, complete_symbol="█", not_complete_symbol="▒", wrap_bar_prefix=" [", wrap_bar_suffix="] ", progress_explain="", progress_loc=pyprog.ProgressBar.PROGRESS_LOC_END)
+                prog = pyprog.ProgressBar(" ", " ", total=100, bar_length=15, complete_symbol=os.environ.get("FINISHED_PROGRESS_STR", "█"), not_complete_symbol=os.environ.get("UN_FINISHED_PROGRESS_STR", "░"), wrap_bar_prefix=" [", wrap_bar_suffix="] ", progress_explain="", progress_loc=pyprog.ProgressBar.PROGRESS_LOC_END)
                 
                 old_stdout = sys.stdout
                 new_stdout = io.StringIO()
