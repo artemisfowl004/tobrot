@@ -59,6 +59,6 @@ class Config(object):
     LOG_COMMAND = os.environ.get("LOG_COMMAND", "logssg")
     SPLIT_COMMAND = os.environ.get("SPLIT_COMMAND", "splitsnf")
     RENAME_COMMAND = os.environ.get("RENAME_COMMAND", "renamedgj")
-    UPLOAD_TO_CLOUD_WHEN_RENAME = os.environ.get("UPLOAD_TO_CLOUD_WHEN_RENAME", "N")
+    UPLOAD_TO_CLOUD_WHEN_RENAME = os.environ.get("UPLOAD_TO_CLOUD_WHEN_RENAME", "Nqdx")
     GP_LINKS_API_KEY = os.environ.get("GP_LINKS_API_KEY", None)
     GP_LINKS_COMMAND = os.environ.get("GP_LINKS_COMMAND", "gplink")
