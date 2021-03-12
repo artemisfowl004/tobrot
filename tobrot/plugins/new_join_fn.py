@@ -3,7 +3,7 @@
 # (c) Shrimadhav U K
 
 # the logging things
-import logging
+import logging, os
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -36,8 +36,9 @@ async def help_message_f(client, message):
     #channel_id = str(AUTH_CHANNEL)[4:]
     #message_id = 99
     # display the /help
+    DEV = os.environ.get("DEV", "@Gillz_13")
     button = []
     link = "https://telegra.ph/Help-Message-03-12"
     button.append([pyrogram.InlineKeyboardButton(text="Click to Read", url=f"{link}")])
     button_markup = pyrogram.InlineKeyboardMarkup(button)
-    await message.reply_text("**Hello** 👾 !\n__This is Telegram Leech bot 🧲__ \n__Click Below to know how to use me📄__\n\n**Developer 👨🏻‍💻**: @Gillz_13",reply_markup=button_markup)
+    await message.reply_text(f"**Hello** 👾 !\n__This is Telegram Leech bot 🧲__ \n__Click Below to know how to use me📄__\n\n**Developer 👨🏻‍💻**: {DEV}",reply_markup=button_markup)
