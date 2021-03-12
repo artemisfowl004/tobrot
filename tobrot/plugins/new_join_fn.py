@@ -12,7 +12,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
 
 import pyrogram
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from tobrot import (
     AUTH_CHANNEL
