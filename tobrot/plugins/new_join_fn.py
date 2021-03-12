@@ -36,9 +36,9 @@ async def help_message_f(client, message):
     #channel_id = str(AUTH_CHANNEL)[4:]
     #message_id = 99
     # display the /help
-    button_markup = pyrogram.InlineKeyboardMarkup(button)
     button = []
     link = "https://telegra.ph/Help-Message-03-12"
     button.append([pyrogram.InlineKeyboardButton(text="Open", url=f"{link}")])
+    button_markup = pyrogram.InlineKeyboardMarkup(button)
     await message.reply_text("Click Here for Help !",reply_markup=button_markup)
 
