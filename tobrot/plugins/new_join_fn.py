@@ -13,7 +13,6 @@ LOGGER = logging.getLogger(__name__)
 
 import pyrogram
 
-
 from tobrot import (
     AUTH_CHANNEL
 )
@@ -37,6 +36,8 @@ async def help_message_f(client, message):
     #channel_id = str(AUTH_CHANNEL)[4:]
     #message_id = 99
     # display the /help
-    
-    await message.reply_text("""https://telegra.ph/Help-Message-03-12""", disable_web_page_preview=True)
-
+    button = []
+    link = "https://telegra.ph/Help-Message-03-12"
+    button.append([pyrogram.InlineKeyboardButton(text="Click to Read", url=f"{link}")])
+    button_markup = pyrogram.InlineKeyboardMarkup(button)
+    await message.reply_text("**Hello** 👾 !\n__This is Telegram Leech bot 🧲__ \n__Click Below to know how to use me📄__\n\n**Developer 👨🏻‍💻**: @Gillz_13",reply_markup=button_markup)
