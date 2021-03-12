@@ -12,7 +12,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
 
 import pyrogram
-
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from tobrot import (
     AUTH_CHANNEL
@@ -37,6 +37,7 @@ async def help_message_f(client, message):
     #channel_id = str(AUTH_CHANNEL)[4:]
     #message_id = 99
     # display the /help
+    button_markup = pyrogram.InlineKeyboardMarkup(button)
     button = []
     link = "https://telegra.ph/Help-Message-03-12"
     button.append([pyrogram.InlineKeyboardButton(text="Open", url=f"{link}")])
