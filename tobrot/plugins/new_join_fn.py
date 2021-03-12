@@ -40,5 +40,5 @@ async def help_message_f(client, message):
     link = "https://telegra.ph/Help-Message-03-12"
     button.append([pyrogram.InlineKeyboardButton(text="Click to Read", url=f"{link}")])
     button_markup = pyrogram.InlineKeyboardMarkup(button)
-    await message.reply_text("Hello !\n This is Telegram Leech bot \n Click Below to know how to use me \n Developer: @Gillz_13",reply_markup=button_markup)
+    await message.reply_text("**Hello** !\n__This is Telegram Leech bot__ \n__Click Below to know how to use me__\n**Developer**: @Gillz_13",reply_markup=button_markup)
 
