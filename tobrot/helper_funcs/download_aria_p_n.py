@@ -33,9 +33,9 @@ from tobrot import (
 )
 from pyrogram.errors import MessageNotModified
 from pyrogram.types import (
-	InlineKeyboardButton,
-	InlineKeyboardMarkup,
-	Message
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message
 )
 
 async def aria_start():
@@ -473,10 +473,10 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 prog.update()
                 output = new_stdout.getvalue()
                 sys.stdout = old_stdout
-		prg = output[3:len(output)]
+                prg = output[3:len(output)]
                 msg = f"╭╌╌╌╌╌╌╌╌╌╌╌╌╌⌊ Downloading File 📝  ⌉ [<code>{file.progress_string()}</code>]\n"
                 msg += "│"+"\n├─"+f"{prg}\n" +"│"
-		msg += f"\n├─FileName : {downloading_dir_name}"
+                msg += f"\n├─FileName : {downloading_dir_name}"
                 msg += f"\n├─Speed 🚀 :  <code>{file.download_speed_string()} </code>"
                 msg += f"\n├─Total Size 🗂 :  <code>{file.total_length_string()}</code>"
 
@@ -487,7 +487,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
 
                 # msg += f"\n<b>Status</b> : <code>{file.status}</code>"
                 msg += f"\n├─ETA ⏳ :  <code>{file.eta_string()}</code>"
-		msg += "\n╰╌╌╌╌╌╌╌╌╌╌╌╌╌⌊ using engine aria2 ⌉"
+                msg += "\n╰╌╌╌╌╌╌╌╌╌╌╌╌╌⌊ using engine aria2 ⌉"
                 inline_keyboard = []
                 ikeyboard = []
                 ikeyboard.append(InlineKeyboardButton("Cancel ❌", callback_data=(f"cancel {gid}").encode("UTF-8")))
