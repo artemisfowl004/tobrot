@@ -474,20 +474,20 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 output = new_stdout.getvalue()
                 sys.stdout = old_stdout
                 prg = output[3:len(output)]
-                msg = f"╭╌╌╌╌╌╌╌╌╌⌊ Downloading File 📝 ⌉ \n"
+                msg = f"╭────────⌊ Downloading File 📝 ⌉ \n"
                 msg += "│"+"\n├─"+f"{prg}\n" +"│"
-                msg += f"\n├─FileName : {downloading_dir_name}"
-                msg += f"\n├─Speed 🚀 :  <code>{file.download_speed_string()} </code>"
-                msg += f"\n├─Total Size 🗂 :  <code>{file.total_length_string()}</code>"
+                msg += f"\n├FileName 📚: {downloading_dir_name}"
+                msg += f"\n├Speed 🚀 :  <code>{file.download_speed_string()} </code>"
+                msg += f"\n├Total Size 🗂 :  <code>{file.total_length_string()}</code>"
 
                 if is_file is None :
-                   msg += f"\n├─Connections 📬 :  <code>{file.connections}</code>"
+                   msg += f"\n├Connections 📬 :  <code>{file.connections}</code>"
                 else :
-                   msg += f"\n├─Info 📄 : <code>[ P : {file.connections} || S : {file.num_seeders} ]</code>"
+                   msg += f"\n├Info 📄 : <code>[ P : {file.connections} || S : {file.num_seeders} ]</code>"
 
                 # msg += f"\n<b>Status</b> : <code>{file.status}</code>"
-                msg += f"\n├─ETA ⏳ :  <code>{file.eta_string()}</code>"
-                msg += "\n╰╌╌╌╌╌╌╌╌╌⌊ using engine aria2 ⌉"
+                msg += f"\n├ETA ⏳ :  <code>{file.eta_string()}</code>"
+                msg += "\n╰───⌊ ⚡️ using engine aria2 ⌉"
                 inline_keyboard = []
                 ikeyboard = []
                 ikeyboard.append(InlineKeyboardButton("Cancel ❌", callback_data=(f"cancel {gid}").encode("UTF-8")))
