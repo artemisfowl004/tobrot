@@ -474,7 +474,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 output = new_stdout.getvalue()
                 sys.stdout = old_stdout
                 prg = output[3:len(output)]
-                msg = f"╭╌╌╌╌╌╌╌╌╌⌊ Downloading File 📝 ⌉ [<code>{file.progress_string()}</code>]\n"
+                msg = f"╭╌╌╌╌╌╌╌╌╌⌊ Downloading File 📝 ⌉ \n"
                 msg += "│"+"\n├─"+f"{prg}\n" +"│"
                 msg += f"\n├─FileName : {downloading_dir_name}"
                 msg += f"\n├─Speed 🚀 :  <code>{file.download_speed_string()} </code>"
