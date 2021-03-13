@@ -31,11 +31,10 @@ from tobrot import (
     CUSTOM_FILE_NAME,
     STRIP_FILE_NAMES
 )
-from pyrogram.errors import MessageNotModified
-from pyrogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message
+from pyrogram import (
+	InlineKeyboardButton,
+	InlineKeyboardMarkup,
+	Message
 )
 
 async def aria_start():
