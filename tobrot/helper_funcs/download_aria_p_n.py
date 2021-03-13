@@ -474,7 +474,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 output = new_stdout.getvalue()
                 sys.stdout = old_stdout
                 prg = output[3:len(output)]
-                msg = f"╭────────⌊ 📥 <b>Downloading File</b> ⌉ \n"
+                msg = f"╭──────── ⌊ 📥 <b>Downloading File</b> ⌉ \n"
                 msg += "│"+"\n├"+f"{prg}\n" +"│"
                 msg += f"\n├<b>FileName</b> 📚: {downloading_dir_name}"
                 msg += f"\n├<b>Speed</b> 🚀 :  <code>{file.download_speed_string()} </code>"
@@ -487,7 +487,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
 
                 # msg += f"\n<b>Status</b> : <code>{file.status}</code>"
                 msg += f"\n├<b>ETA</b> ⏳ :  <code>{file.eta_string()}</code>"
-                msg += "\n╰───⌊ ⚡️ using engine aria2 ⌉"
+                msg += "\n╰─── ⌊ ⚡️ using engine aria2 ⌉"
                 inline_keyboard = []
                 ikeyboard = []
                 ikeyboard.append(InlineKeyboardButton("Cancel ❌", callback_data=(f"cancel {gid}").encode("UTF-8")))
