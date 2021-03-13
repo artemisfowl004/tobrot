@@ -51,7 +51,7 @@ async def progress_for_pyrogram(
             # elapsed_time if elapsed_time != '' else "0 s",
             estimated_total_time if estimated_total_time != '' else "0 s"
         )
-        tmp += "\n╰──⌊ ⚡️ using engine pyrogram ⌉"
+        tmp += "\n│"+"\n╰──⌊ ⚡️ using engine pyrogram ⌉"
         try:
             if not message.photo:
                 await message.edit_text(
