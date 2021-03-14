@@ -458,7 +458,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                     pass
                 #
-                prog = pyprog.ProgressBar(" ", " ", total=100, bar_length=15, complete_symbol="●", not_complete_symbol="○", wrap_bar_prefix=" [", wrap_bar_suffix="] ", progress_explain="", progress_loc=pyprog.ProgressBar.PROGRESS_LOC_END)
+                prog = pyprog.ProgressBar(" ", " ", total=100, bar_length=15, complete_symbol="●", not_complete_symbol="○", wrap_bar_prefix=" 〖", wrap_bar_suffix="〗 ", progress_explain="", progress_loc=pyprog.ProgressBar.PROGRESS_LOC_END)
                 
                 old_stdout = sys.stdout
                 new_stdout = io.StringIO()
@@ -474,9 +474,21 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 output = new_stdout.getvalue()
                 sys.stdout = old_stdout
                 prg = output[3:len(output)]
-                msg = f"╭──────── ⌊ 📥 <b>Downloading File</b> ⌉ \n"
+                i = 0
+                i = int(i)
+                STR = int(os.environ.get("STR", 40))
+                msg = f"╭──────── ⌊ 📥 <b>Downloading</b> ⌉ \n"
                 msg += "│"+"\n├"+f"{prg}\n" +"│"
-                msg += f"\n├<b>FileName</b> 📚: {downloading_dir_name}"
+                msg += f"\n├<b>FileName</b> 📚: "
+                name = f"{downloading_dir_name}"
+                while(len(name)>0):
+                    str = name[0:STR]
+                    name = name[STR:len(name)]
+                    if(i==0):
+                        msg += f"{str}"
+                        i = 1
+                    else:
+                        msg += f"\n│{str}"
                 msg += f"\n├<b>Speed</b> 🚀 :  <code>{file.download_speed_string()} </code>"
                 msg += f"\n├<b>Total Size</b> 🗂 :  <code>{file.total_length_string()}</code>"
 
