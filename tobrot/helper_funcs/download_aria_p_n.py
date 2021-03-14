@@ -482,12 +482,14 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 msg += f"\n├<b>FileName</b> 📚: "
                 while(len(downloading_dir_name)>0):
                     st = downloading_dir_name[0:STR]
-                    downloading_dir_name = downloading_dir_name[STR:len(downloading_dir_name)]
                     if(i==0):
                         msg += f"{downloading_dir_name[0:STR-10]}"
+                        downloading_dir_name = downloading_dir_name[STR:len(downloading_dir_name)]
                         i = 1
                     else:
                         msg += f"\n│{st}"
+                        downloading_dir_name = downloading_dir_name[STR:len(downloading_dir_name)]
+                        
                 msg += f"\n├<b>Speed</b> 🚀 :  <code>{file.download_speed_string()} </code>"
                 msg += f"\n├<b>Total Size</b> 🗂 :  <code>{file.total_length_string()}</code>"
 
