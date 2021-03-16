@@ -482,7 +482,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                     st = downloading_dir_name[0:STR]
                     if(i==0):
                         msg += f"{downloading_dir_name[0:STR-15]}"
-                        downloading_dir_name = downloading_dir_name[STR-10:len(downloading_dir_name)]
+                        downloading_dir_name = downloading_dir_name[STR-15:len(downloading_dir_name)]
                         i = 1
                     else:
                         msg += f"\n│{st}"
